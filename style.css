@@ -72,6 +72,13 @@
       padding-left:0px;  /*wrong*/
   }
 
+  button{   /*wrong*/
+      background-color: transparent;
+      cursor: pointer;      /*위에 대면 포인터생김*/
+      border: none;
+      outline: none;
+  }
+
   /* navbar */
 #navbar{
     display: flex;
@@ -105,7 +112,6 @@
   .navbar__menu__item{
       padding:8px 12px;     /*wrong*/
       margin:0 4px;      /*wrong*/
-    width : 40px;
      /* border:0.5px solid;  */
      /* border-color: var(--color-dark-white);  */
     font-size: 20px;
@@ -114,19 +120,32 @@
     cursor: pointer;    /*wrong*/
   }
 
+.navbar__menu__item:hover{  /*wrong!!! important*/
+    background-color: var(--color-dark-grey);
+    border:1px solid wheat;
+    border-radius: 4px;
+}
+
 #home{
     position:relative;
-    background-image: url("imgs/crypto_background.jpeg");
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    height: 350px;
+    /* background-image: url("imgs/crypto_background.jpeg");
+    background-size: cover; */
+    background: url("imgs/crypto_background.jpeg") center/cover no-repeat;
+    justify-content: center;    /*wrong 이거왜안됨?*/
+    text-align: center;   /*wrong. 안됐었는데 ㅅㅂ;;*/
+    height: 350px; /* wrong. hard coding */
+    padding: 40px;
+}
+
+.home__avatar{
+    border-radius: 50%;  /* wrong 50% */
+    border: 2px solid var(--color-dark-pink);  
 }
 
 .home__title{
     font-weight: var(--weight-regular);
     color: var(--color-white);
+    padding-right: 0px;
     margin: 4px 0;
 }
 
@@ -136,8 +155,10 @@
     margin: 4px 0;
 }
 
-.navbar__menu__item:hover{  /*wrong!!! important*/
-    background-color: var(--color-dark-grey);
-    border:1px solid wheat;
-    border-radius: 4px;
+.home__contact{
+    border: 2px solid var(--color-light-white);
+    padding:6px 30px;
+    color: #f5f2e2;
+    font-weight: 600;
+    margin: 20px;
 }
