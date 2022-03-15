@@ -166,8 +166,12 @@
 .section{           /*wrong */
     padding:50px;
     text-align: center;
-    max-width: 1200px;
     margin:auto;   /* ?? whats it? */
+}
+
+.section_container{
+    max-width: 1200px;
+    margin: auto;
 }
 
 #about{
@@ -228,4 +232,80 @@
 .job__description{
     margin: 0 16px;
     text-align: left;
+}
+
+#skills{
+    background-color: #fff7d1;
+    font-weight: 500;
+}
+
+.skill{
+    margin: 0 40px;
+}
+
+.skillset{
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+.skillset__left{
+    background-color: #aaa091;
+    padding: 16px 8px;
+    justify-content: center;
+    flex-basis: 60%;    /* wrong */
+}
+
+
+.skillset__right{
+    /* width: 650px; */
+    flex-basis: 40%;  /* wrong  비율에맞춰 늘어나는 */
+}
+
+.skill_description{
+    padding:2px 0;
+    color: #eeeeee;
+    justify-content: space-between;
+    display: flex;      /* wrong. 배열방법?? */
+}
+
+.skill__bar{
+    /* display: inline-block; */
+    /* width: 600px; */     /*wrong. 100%가 있는데 하드코딩*/
+    width:100%;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-dark-grey);
+    margin: 4px;
+    border: 4px solid;
+}
+
+.skill__value{
+    /* text-align: left; */
+    /* display: inline-block; */
+    /* width: 80%; */
+    height: 4px;
+    background-color:#feb546;
+}
+
+
+.tools{
+    background-color: #616161;
+    padding: 20px 40px;
+    margin: 0;
+    color: var(--color-light-white);
+    
+}
+
+.etc{
+    background-color: #bdbdbd;
+    padding: 16px 0;
+    margin: 0;
+    color:var(--color-light-white);
+
+}
+
+.skillset__title{
+    color: var(--color-light-white);
 }
