@@ -127,11 +127,11 @@
 }
 
 #home{
-    position:relative;
+    /* position:relative; */
     /* background-image: url("imgs/crypto_background.jpeg");
     background-size: cover; */
     background: url("imgs/crypto_background.jpeg") center/cover no-repeat;
-    justify-content: center;    /*wrong 이거왜안됨?*/
+    /* justify-content: center;    wrong 이거왜안됨? */
     text-align: center;   /*wrong. 안됐었는데 ㅅㅂ;;*/
     height: 350px; /* wrong. hard coding */
     padding: 40px;
@@ -161,4 +161,71 @@
     color: #f5f2e2;
     font-weight: 600;
     margin: 20px;
+}
+
+.section{           /*wrong */
+    padding:50px;
+    text-align: center;
+    max-width: 1200px;
+    margin:auto;   /* ?? whats it? */
+}
+
+#about{
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    /* position: relative; */
+}
+
+.about__majors{
+    
+    display: inline-block;
+    padding: 8px;
+    justify-content: space-between; /*wrong*/
+    margin: 80px 0;  /*wrong*/
+    /* padding-right:0px; */
+}
+
+.major__icon{    /* wrong wrong...*/
+    /* transform: scale(7); */
+    color: #73aace;
+    width: 170px;
+    height: 170px;
+    font-size: 70px;
+    line-height: 170px; /*wrong . 이렇게 쓰네 꼼수*/
+    border-radius: 50%;
+    border:2px solid var(--color-dark-white);
+    margin: auto;       /* wrong . 이거 이해 xxxxxxxx*/
+    margin-bottom: 16px;
+}
+
+.major__icon:hover{
+    transform: rotate(35deg) scale(1.1);
+    color: #fe918d;
+    background-color:#f5f2e2;
+    transition: all 0.8s ease;           /* wrong. 색깔적용 뭐임*/
+}
+
+.major{
+    /* padding: 20px; */
+}
+
+.major__title , .major__description{   /*wrong. 2개 지정 */
+    color: var(--color-dark-grey);
+}
+
+.major__description{
+    font-size: 20px;
+}
+
+.job{
+    display: flex; /*wrong*/
+    align-items: center;
+    /* text-align: left; */
+    /* display: block; */
+}
+
+.job__description{
+    margin: 0 16px;
+    text-align: left;
 }
