@@ -406,3 +406,63 @@
     transform: translateY(0px);
     opacity: 1;
 }
+
+
+.work__cartegories::after{
+    content: "after 테스트!";
+    width: 100px;
+    height: 20px;
+    background-color: #73aace;
+    display: block;
+}
+
+#testimonials{
+    background-color:#bdbdbd;
+    width: 80%;
+}
+
+.testimonial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial__avartar{
+    transform: scale(0.8);
+    border-radius: 70%;
+}
+
+.testimonial__speech-bubble{
+    background-color: #eeeeee;
+    width: 70%;
+    padding: 50px 0;
+    margin: 40px 10px;
+}
+
+.testimonial__speech-bubble p{  /*wrong. 태그 따로 지정*/
+    color: var(--color-light-grey); 
+}
+
+.avartarname{
+    margin-top: 12px;
+    color: #fe918d;
+}
+
+#contact{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fe918d;
+    width: 80%;
+}
+
+.contact__title , .contact__links , .contact__rights ,
+.contact__email{
+    color: #f5f2e2;
+    margin: 20px 0;
+}
+
+.contact__links i:hover{
+    transform: scale(2);
+    color: blueviolet;
+    transition: all 300ms;
+}
