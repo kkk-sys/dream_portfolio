@@ -84,9 +84,19 @@
     display: flex;
     /* display:inline; */
     justify-content: space-between; /*wrong*/
-    background-color:#73aace;
+    background-color: transparent;  /* wrong. 그대로?? */
     align-items: center;
+    /* align-items: center; */
+    position: fixed;        /*wrong. sticky인줄*/
+    width: 100%;
     padding: 6px;
+}
+
+#navbar.navbar--dark{
+    background-color: #73aace;
+    opacity: 0.8;
+    padding: 8px;
+    transition: all 250ms ease-in-out;
 }
 
 .navbar__logo{
@@ -105,7 +115,7 @@
   .navbar__menu{
     /* display: inline; */
     /* flex-direction: row; */
-    /* display: flex; */
+    display: flex;
     align-items: center;
   }
 
@@ -116,7 +126,8 @@
      /* border-color: var(--color-dark-white);  */
     font-size: 20px;
     color:var(--color-dark-white);
-    display:inline;
+    /* display:inline; */
+
     cursor: pointer;    /*wrong*/
   }
 
@@ -316,10 +327,10 @@
     border: 1px solid;
     border-radius: 8px;
     margin: 0;
-    height: 36px;
+    /* height: 36px; */
     font-size: 16px;
     padding:8px 48px;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 .category__btn.active,      /*active 가 있거나 wrong.*/
@@ -367,6 +378,8 @@
 
 .work__cartegories{
     margin: 40px;
+    /* display: flex; */
+    justify-content: center;
 }
 
 .work__projects{
@@ -466,3 +479,46 @@
     color: blueviolet;
     transition: all 300ms;
 }
+
+.navber__toggle-btn{
+    /* opacity: 0; */   /*wrong. 이건 마우스클릭 되서 사용x*/
+    display: none;
+    position: absolute;
+    font-size: 24px;
+    color: #bdbdbd;
+    right: 30px;
+    top: 8px;
+}
+
+/* wrong. media query??? */
+/* for below 768px screen width */
+@media screen and (max-width:768px) {
+    .navber__toggle-btn{
+        display: block;
+    }
+    #navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__menu{
+        flex-direction: column;     /* wrong 이건 또 왜안됨 ㅅㅂ*/
+        width: 100%;
+        text-align: center;
+    }
+
+    .skillset{
+        flex-direction: column;
+    }
+
+    .project{
+        flex-grow: 1;       /*wrong. 알아서 화면 메꿔주는*/
+    }
+
+    .testimonial__avartar{
+        width: 160px;
+        height: 120px;
+    }
+}
+
+
