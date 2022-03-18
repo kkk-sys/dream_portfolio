@@ -195,3 +195,32 @@ workBtnContainer.addEventListener('click' , (e) => {
 
 });
 
+
+const toggle_btn = document.querySelector('.navber__toggle-btn');
+toggle_btn.addEventListener('click',() => {
+//    document.querySelector('#navbar').classList.add('navbar__toggled');
+    console.log(document.querySelector('.navbar__menu').classList);
+    if(document.querySelector('.navbar__menu').classList.contains('navbar__menu__toggled')){
+        document.querySelector('.navbar__menu').classList.remove('navbar__menu__toggled');
+        document.querySelector('.navbar__menu__in').classList.remove('navbar__menu__toggled');
+    }
+    else{
+        document.querySelector('.navbar__menu').classList.add('navbar__menu__toggled');
+        document.querySelector('.navbar__menu__in').classList.add('navbar__menu__toggled');
+    }
+    
+})
+
+window.addEventListener('resize',(e) => {
+    let w =document.documentElement.clientWidth;
+    if(w > 728){
+        document.querySelector('.navbar__menu').classList.remove('navbar__menu__toggled');
+        document.querySelector('.navbar__menu__in').classList.remove('navbar__menu__toggled');       
+    }
+})
+
+
+
+
+
+
