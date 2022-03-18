@@ -156,12 +156,29 @@ const workBtnContainer = document.querySelector('.work__cartegories');
 const nftContainer = document.querySelector('.work__projects');
 const nfts = document.querySelectorAll('.project');
 
-// wrong. debug이용하기 
+// wrong. debug이용하기  , 나오는거 smooth 왜 안됨?
 workBtnContainer.addEventListener('click' , (e) => {
     const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     if(filter == null){
         return;
     }
+
+    //버튼 selection
+    // for(let i = 0; i<workBtnContainer.children.length; i++ ){
+    //     if(workBtnContainer.children[i].dataset.filter == filter){
+    //         workBtnContainer.children[i].classList.add('nft__clicked');
+    //     }
+    //     else{
+    //     workBtnContainer.children[i].classList.remove('nft__clicked');
+    //     }
+    // }
+
+    //sam's code. 필요한 부분만 remove함 . 
+    const active = document.querySelector('.category__btn.nft__clicked');
+    if(active != null)
+        active.classList.remove('nft__clicked');
+    const target = e.target.tagName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('nft__clicked');
 
     nftContainer.classList.add('anime-out');
     
@@ -173,10 +190,8 @@ workBtnContainer.addEventListener('click' , (e) => {
                 nft.classList.add('invisible');
             }
     });
-        nftContainer.classList.remove('anime-out');
-}, 500);
+    nftContainer.classList.remove('anime-out');
+}, 600);
 
-    console.log(filter);
-
-})
+});
 
