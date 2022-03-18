@@ -97,7 +97,6 @@
     background-color: #73aace;
     padding:6px;
     opacity: 0.8;
-    padding: 8px;
     transition: all 250ms ease-in-out;
 }
 
@@ -105,12 +104,12 @@
     font-size: var(--font-regular);
     font-weight: var(--weight-regular);
     color: var(--color-white);
-    margin: 4px 0;
+    margin: 6px 0;
 }
 
 .navbar__logo{
     /* display: inline; */
-    font-size: 24px;
+    font-size: 20px;
     font-weight: var(--weight-semi-bold); /*wrong 두께*/
 }
 
@@ -128,7 +127,8 @@
 
 
   .navbar__menu__item{
-      padding:8px 12px;     /*wrong*/
+      list-style: none;
+      padding:8px 6px;     /*wrong*/
       margin:0 4px;      /*wrong*/
      /* border:0.5px solid;  */
      /* border-color: var(--color-dark-white);  */
@@ -153,7 +153,7 @@
     background: url("imgs/crypto_background.jpeg") center/cover no-repeat;
     /* justify-content: center;    wrong 이거왜안됨? */
     text-align: center;   /*wrong. 안됐었는데 ㅅㅂ;;*/
-    height: 350px; /* wrong. hard coding */
+    height: 400px; /* wrong. hard coding */
     padding: 40px;
 }
 
@@ -199,6 +199,7 @@
     /* align-items: center; */
     /* text-align: center; */
     /* position: relative; */
+    padding:16px;
 }
 
 .about__majors{
@@ -206,7 +207,7 @@
     display: inline-block;
     padding: 8px;
     justify-content: space-between; /*wrong*/
-    margin: 80px 0;  /*wrong*/
+    margin: 40px 0;  /*wrong*/
     /* padding-right:0px; */
 }
 
@@ -247,6 +248,10 @@
     align-items: center;
     /* text-align: left; */
     /* display: block; */
+}
+
+.job__logo{
+    transform: scale(0.7);
 }
 
 .job__description{
@@ -335,10 +340,11 @@
     justify-content: 0px;
     border: 1px solid;
     border-radius: 8px;
+    position:relative;
     margin: 0;
     /* height: 36px; */
     font-size: 16px;
-    padding:8px 48px;
+    padding:8px 30px;
     /* padding-bottom: 30px; */
 }
 
@@ -355,28 +361,28 @@
     /* border: 1px orange; */
     color: whitesmoke;
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     display: inline-block;  /* wrong. 뭐임이거 ?*/
-    line-height:  24px; 
-
-    position: relative;
+    line-height:  16px; 
+    right:8px;
+    position: absolute;
     top: 20px;
-    left: 4px;
     opacity: 0;         /* 평소에 보이지 않는. wrong */
 }
 
 .category__btn.active .category__count,      /*~~일때!! wrong.*/
 .category__btn:hover .category__count,
 .nft__clicked .category__count{
+    display: inline-block;
     background-color: #feb546;
     opacity: 1;
-    top:0;
+    top:25%;
     transition: all 100ms;
 }
 
 #work{
-    width: 60%;
+    width: 70%;
 }
 
 .project__img{
@@ -479,6 +485,11 @@
     width: 80%;
 }
 
+.home__contact:hover{
+    background-color: #feb546;
+    transition: all 300ms;
+}
+
 .contact__title , .contact__links , .contact__rights ,
 .contact__email{
     color: #f5f2e2;
@@ -501,56 +512,6 @@
     top: 8px;
 }
 
-/* wrong. media query??? */
-/* for below 768px screen width */
-@media screen and (max-width:768px) {
-    .navber__toggle-btn{
-        display: block;
-    }
-
-    .navbar__menu{
-        display: none;
-    }
-
-    #navbar{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    /*
-    .navbar__menu{
-        flex-direction: column;    
-        width: 100%;
-        text-align: center;
-    } */
-
-
-    .skillset{
-        flex-direction: column;
-    }
-
-    .project{
-        flex-grow: 1;       /*wrong. 알아서 화면 메꿔주는*/
-    }
-
-    .testimonial__avartar{
-        width: 160px;
-        height: 120px;
-    }
-}
-
-    
-.navbar__menu.navbar__menu__toggled{
-    display: flex;
-    flex-direction: column;     /* wrong 이건 또 왜안됨 ㅅㅂ*/
-    width: 100%;
-    text-align: center;
-    transition: all 300ms;
-}
-
-.navbar__menu__in.navbar__menu__toggled{
-    flex-direction: column;
-}
-
 
 #arrowup{
     border-radius: 50%;
@@ -571,6 +532,84 @@
     color: whitesmoke;
     transform: scale(2.5);
 }
+
+/* wrong. media query??? */
+/* for below 768px screen width */
+@media screen and (max-width:768px) {
+
+    /*media에서 따로 변수 설정가능.*/
+    :root{
+            /* Font size */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 14px;
+    }
+
+    .navber__toggle-btn{
+        display: block;
+    }
+
+    .navbar__menu{
+        display: none;
+    }
+
+    #navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    /*
+    .navbar__menu{
+        flex-direction: column;    
+        width: 100%;
+        text-align: center;
+    } */
+
+    .category__btn{
+        margin: 4px 0;
+        width: 100%;
+    }
+
+    .skillset{
+        flex-direction: column;
+    }
+
+    .project{
+        flex-grow: 1;       /*wrong. 알아서 화면 메꿔주는*/
+    }
+
+    .testimonial__avartar{
+        width: 160px;
+        height: 120px;
+    }
+
+    .arrow--on{
+        width:50px;
+        height:50px;
+        font-size: 30px;
+        right : 35%;
+    }
+
+    #arrowup i{
+        transform: scale(1);
+    }
+}
+
+    
+.navbar__menu.navbar__menu__toggled{
+    display: flex;
+    flex-direction: column;     /* wrong 이건 또 왜안됨 ㅅㅂ*/
+    width: 100%;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.navbar__menu__in.navbar__menu__toggled{
+    flex-direction: column;
+}
+
+
 
 .nft-remove{
     display: none;
